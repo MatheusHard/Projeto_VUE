@@ -52,7 +52,7 @@ export default {
     return {
       title: 'Cadastro ADM!',
       nome: null,
-      myProfissional: null,
+      myProfissional: [],
       temp_especialistas: null,
       
       array_perfil: [
