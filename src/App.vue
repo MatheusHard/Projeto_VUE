@@ -18,6 +18,7 @@ import Home from './components/Home.vue';
   </header>
 -->
   <main>
+    <router-view/>
    <!-- <TheWelcome />-->
    <Home/>
 

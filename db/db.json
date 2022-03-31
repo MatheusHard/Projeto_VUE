@@ -1,0 +1,31 @@
+{
+       
+    "array_perfis": [
+        {
+            "id": 1,
+            "nome": "Medico Clinico",
+            "CBO": "120"},
+        {
+            "id": 2,
+            "nome": "Medico Especialista",
+            "CBO": "221",
+            "tipo_especialidade":
+            [
+                {"id": 1, "tipo": "neuro"},
+                {"id": 2, "tipo": "ginecologista"},
+                {"id": 3, "tipo": "proctologista"}
+            ]
+        }
+    ],
+
+    "array_profissionais": [
+        {"id": 1, "nome": "Matheus", "age": 50},
+        {"id": 2, "nome": "Wilson", "age": 130},
+        {"id": 3, "nome": "Luiz", "age": 220}
+              
+    ]
+  }
+
+
+
+
