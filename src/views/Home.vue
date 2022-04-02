@@ -1,10 +1,5 @@
 <script setup>
-import WelcomeItem from './WelcomeItem.vue'
-import DocumentationIcon from './icons/IconDocumentation.vue'
-import ToolingIcon from './icons/IconTooling.vue'
-import EcosystemIcon from './icons/IconEcosystem.vue'
-import CommunityIcon from './icons/IconCommunity.vue'
-import SupportIcon from './icons/IconSupport.vue'
+
 </script>
 
 
@@ -16,7 +11,6 @@ import SupportIcon from './icons/IconSupport.vue'
     </div>
     
     <div>
-        <router-link  to="/hello">API</router-link>
     </div>
 
     <form id="cadastro_adm" @submit="createAdm">
@@ -57,7 +51,8 @@ import SupportIcon from './icons/IconSupport.vue'
 </template>
 <script>
 export default {
-  
+
+  name: "Home",
   el: "#medico",
   data() {
     return {
