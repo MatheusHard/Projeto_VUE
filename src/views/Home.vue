@@ -1,6 +1,6 @@
 <template>
     <did id="nav">
-        <h1>
+        <h1 v-show="RRR">
           Home
         </h1>
     </did>
