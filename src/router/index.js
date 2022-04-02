@@ -11,7 +11,7 @@ const routes = [
     path: '/medico',
     name: 'Medico',
     
-    component: () => import(/* webpackChunkName: "medico" */ '../views/Medico.vue')
+    component: () => import(/* webpackChunkName: "medico" */ '../views/Medico/Medico.vue')
   }
 ]
 

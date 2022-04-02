@@ -2,22 +2,31 @@
 import Home from "./views/Home.vue";
 import NavBar from "./components/NavBar.vue";
 import Footer from "./components/Footer.vue";
+import CadastroMedico from "./views/Medico/CadastroMedico.vue";
+import Medico from "./views/Medico/Medico.vue";
 
 
 </script>
 
 
 <template>
-
-    <NavBar/>
-    <Home/>
+<div>
+  <NavBar/>
+  <Home/>
+  <Medico/>
     <Footer/>
+</div>
+    
 
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    NavBar,
+    Footer
+  }
 }
 </script>
 <style>
