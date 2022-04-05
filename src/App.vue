@@ -13,6 +13,7 @@ import Testes from "./views/Testes.vue";
 <template>
 <div>
   <NavBar/>
+  <CadastroMedico/>
   <Testes/>
     <Footer/>
 </div>

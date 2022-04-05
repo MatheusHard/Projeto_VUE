@@ -1,6 +1,7 @@
 <script setup>
-
+  import axios from 'axios' 
 </script>
+
 
 
 
@@ -21,27 +22,20 @@
 
     <div class="input-container">
 	    <label for="name">Perfil: </label>
-	    <select name="teste" id="teste" v-model="myProfissional">
+	    <select  @change="onChange()" name="teste" id="teste" v-model="myProfissional">
 	        <option key value="">Selecione o Tipo Medico</option>
 	        <option v-for="m in array_perfil" :key="m.id" :value="m">{{m.nome}}</option>
 	    </select>
     </div>
 
-     <div class="input-container">
+     <div v-if="flag_especialidade" class="input-container">
 	    <label for="name">Especialidade: </label>
 	    <select name="teste" id="teste" v-model="teste">
-	        <option key value="">Selecione a Especialidade</option>
+	        <option key value="undefined">Selecione a Especialidade</option>
 	        <option v-for="e in myProfissional.tipo_especialidade" :key="e.id" :value="e.tipo">{{e.tipo}}</option>
 	    </select>
     </div>
-
-    <div class="input-container">
-	    <label for="name">Perfil: </label>
-	    <select name="teste" id="teste">
-	        <option key value="">Selecione o Tipo Medico</option>
-	        <option v-for="m in temp_especialistas" :key="m.id" :value="m">{{m.nome}}</option>
-	    </select>
-    </div>
+  
     <div>{{myProfissional}}</div>
 
     <div style="margin-top: 20px">
@@ -58,26 +52,10 @@ export default {
     return {
       title: 'Cadastro Medico!',
       nome: null,
+      flag_especialidade: false,
       myProfissional: [],
       temp_especialistas: null,
       array_perfil: [],
-      /*array_perfil: [
-          {
-              id: 1,
-              nome: "Medico Clinico",
-              CBO: "120"},
-          {
-              id: 2,
-              nome: "Medico Especialista",
-              CBO: "221",
-              tipo_especialidade:
-              [
-                  {id: 1, tipo: "neuro"},
-                  {id: 2, tipo: "ginecologista"},
-                  {id: 3, tipo: "proctologista"}
-              ]
-              },
-      ],*/
       array: [
           {id: 1, nome: "Matheus", age: 50},
           {id: 2, nome: "Wilson", age: 130},
@@ -88,18 +66,43 @@ export default {
   },
      methods:{
       
-   async getApis() {
-      //const req = await fetch('http://localhost:3000/ingredientes')
-      
-      const req = await fetch('/db/db.json');
-      const data = await req.json();
+      /*getApiMedicos(){
+        axios.get('/db/db.json')
+            .then(function (res) {
+              console.log(res.data.array_perfis);
+              //this.array_perfil = res.data.array_perfis;
+              this.array_perfil = res.data.array_perfis;
+              console.log(this.array_perfil)
 
-      this.temp_especialistas = data;
+            })
+            .catch(function (error) {
+              console.log(error);
+            })
+      }*/
+      onChange(){
 
-      this.array_perfil = data.array_perfis;
-      console.log("Desntro do GET");
-      console.log(this.temp_especialistas);
+        console.log("this.myProfissional")
+        console.log(this.myProfissional)
+
+        if(this.myProfissional.tipo_especialidade.length > 0){
+          this.flag_especialidade = true;
+          }else{
+          this.flag_especialidade = false;
+          }
+          
       },
+      async getApis() {
+          //const req = await fetch('http://localhost:3000/ingredientes')
+          
+          const req = await fetch('/db/db.json');
+          const data = await req.json();
+
+          this.temp_especialistas = data;
+
+          this.array_perfil = data.array_perfis;
+          console.log("Desntro do GET");
+          console.log(this.temp_especialistas);
+          },
   
 
 
@@ -110,6 +113,7 @@ export default {
   
   mounted(){
     this.getApis();
+    //this.getApiMedicos();
   }
 
 }

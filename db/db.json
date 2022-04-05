@@ -4,7 +4,10 @@
         {
             "id": 1,
             "nome": "Medico Clinico",
-            "CBO": "120"},
+            "CBO": "120",
+            "tipo_especialidade":[]
+        
+        },
         {
             "id": 2,
             "nome": "Medico Especialista",
