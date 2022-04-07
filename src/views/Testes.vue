@@ -30,7 +30,7 @@
         <div class="container">
             <form action="">
                
-                <h1>        Ficha de Anaminese       </h1>
+                <h1>        Ficha de Anaminese   </h1>
                
                 <div class="container-itens-radios">
                                <h2 class="h2">Anemia    </h2>
