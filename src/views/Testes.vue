@@ -1,5 +1,5 @@
 <template>
-    <did id="nav">
+    <div id="nav">
         <h1 v-show="RRR">
           Home
         </h1>
@@ -29,9 +29,12 @@
         <!--TESTES RADIO BUTTONS-->
         <div class="container">
             <form action="">
-                <h1>Ficha de Anaminese</h1>
+               
+                <h1>        Ficha de Anaminese       </h1>
+               
                 <div class="container-itens-radios">
-                <h2>Anemia   </h2>
+                               <h2 class="h2">Anemia    </h2>
+
                 <label class="label">
                     <input type="radio" id="" name="a1"/>
                     <span class="span">SIM</span>
@@ -42,11 +45,29 @@
                     <span class="span">NÃO</span>
                 </label>
                 </div>
+
+                <!--HIPER-->
+
+                <div class="container-itens-radios">
+               
+               <h2 class="h2">Hipertenso</h2>
+
+                <label class="label">
+                    <input type="radio" id="" name="a2"/>
+                    <span class="span">SIM</span>
+                </label>
+
+                <label class="label">
+                    <input type="radio" id="" name="a2"/>
+                    <span class="span">NÃO</span>
+                </label>
+                </div>
+
             </form>
         </div>
 
 
-    </did>
+    </div>
 </template>
 <script>
 
@@ -103,16 +124,27 @@ box-sizing: border-box;
 .container{
     /*height: 300vh;*/
     height: 100%;
-    width: 700px;
+    width: 800px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid black;
+    /*Deixa no centro:*/
+    margin: auto;
 }
 .container-itens-radios{
-    align-content: space-between;
-    align-items: stretch;
+    justify-content: space-between;
     display: flex;
+    width: 100%;
+    height: 100%;
+    
+
+     margin: 0;
+
+      
+    text-align: center;
+    flex: 1;
+
     
 }
 input[type="radio"]{
@@ -121,17 +153,22 @@ input[type="radio"]{
 .label{
     display: block;
     cursor: pointer;
-       font-weight: 500;
-    margin-bottom: 10px;
-   
+    font-weight: 500;
+    margin-bottom: 5px;
+ 
 }
 
+.h2{
+        margin: 7px;
+        
+}
 .span{
     display: inline-flex;
     align-items: center;
     padding: 10px 20px 10px 10px;
     border-radius: 31px;
     transition: .25s ease;
+
     
     }
 .span:hover,
@@ -142,15 +179,15 @@ input[type="radio"]:checked + .span{
 .span::before{
     content: "";
     background-color: #fff;
-    width: 42px;
-    height: 42px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     margin-right: 10px;
     transition: .25s ease;
     box-shadow: inset 0 0 0 2px #00005c;
 }
 input[type="radio"]:checked + .span::before{
-box-shadow: inset 0 0 0 10px #00005c;
+box-shadow: inset 0 0 0 7px #00005c;
 }
 
 
