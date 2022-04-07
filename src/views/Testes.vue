@@ -26,6 +26,26 @@
             </li>
         </ul>
 
+        <!--TESTES RADIO BUTTONS-->
+        <div class="container">
+            <form action="">
+                <h1>Ficha de Anaminese</h1>
+                <div class="container-itens-radios">
+                <h2>Anemia   </h2>
+                <label class="label">
+                    <input type="radio" id="" name="a1"/>
+                    <span class="span">SIM</span>
+                </label>
+
+                <label class="label">
+                    <input type="radio" id="" name="a1"/>
+                    <span class="span">NÃO</span>
+                </label>
+                </div>
+            </form>
+        </div>
+
+
     </did>
 </template>
 <script>
@@ -35,6 +55,8 @@ export default {
     name: "Testes",
     data() {
         return {
+
+
             nome: 'Mathues',
             joga_bola: false,
             mostrar_email: false,
@@ -72,5 +94,65 @@ export default {
 
 </script>
 <style scoped>
+
+*,
+*:after,
+*:before{
+box-sizing: border-box;
+}
+.container{
+    /*height: 300vh;*/
+    height: 100%;
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+.container-itens-radios{
+    align-content: space-between;
+    align-items: stretch;
+    display: flex;
+    
+}
+input[type="radio"]{
+    display: none;
+}
+.label{
+    display: block;
+    cursor: pointer;
+       font-weight: 500;
+    margin-bottom: 10px;
+   
+}
+
+.span{
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px 10px 10px;
+    border-radius: 31px;
+    transition: .25s ease;
+    
+    }
+.span:hover,
+input[type="radio"]:checked + .span{
+    background-color: #d6d6e5;
+}
+
+.span::before{
+    content: "";
+    background-color: #fff;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: .25s ease;
+    box-shadow: inset 0 0 0 2px #00005c;
+}
+input[type="radio"]:checked + .span::before{
+box-shadow: inset 0 0 0 10px #00005c;
+}
+
+
 
 </style>
